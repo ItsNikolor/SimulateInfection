@@ -1,0 +1,22 @@
+VVP = 100000000
+Cost = 1
+Minimum_wage = 2
+P_infect = 0.3
+P_dead = 0.1
+overload = 0.45
+p_overload = 0.2
+P_begin = 0.1
+self_isolation = 0.3
+social_distanse = 0.05
+round_time = 100
+healing_time = 250
+siе_place = 3
+Моксва 100 0.5 0.5
+Питер 100 0.3 0.5
+Оренбург 100 0.1 0.001
+Сочи 100 0.2 0.4
+Архангельск 80 0.15 0.08
+Китай 100 0.8 0.4
+Индия 100 0.8 0.25
+ОдноМесто 100 0.3 0.0004
+Test 10 0.1 0.01
