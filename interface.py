@@ -1,37 +1,31 @@
-import math
-import random
-import sys
-
 import numpy as np
-from numba import njit
-from numpy.random import choice
 import pygame
 import pygame.freetype
-from pygame.locals import *
 
-#Окно для ввода числа прививок
+
+# Окно для ввода числа прививок
 class InputBox:
     COLOR_INACTIVE = pygame.Color('lightskyblue3')
     COLOR_ACTIVE = pygame.Color('dodgerblue2')
 
-    #Конструктор
+    # Конструктор
     def __init__(self, x, y, w, h, font, map, text=''):
         pass
 
-    #Ассоциировать окно с городом
+    # Ассоциировать окно с городом
     def assign_city(self, city):
         pass
 
-    #Обработать событие
+    # Обработать событие
     def handle_event(self, event):
         pass
 
-    #Нарисовать окно
+    # Нарисовать окно
     def draw(self, screen):
         pass
 
 
-#Карта на которой всё отображается
+# Карта на которой всё отображается
 class Map:
     SPEED = 2
     P_W = 0.3
@@ -45,38 +39,38 @@ class Map:
 
     BAD_ROUND = False
 
-    #Конструктор
+    # Конструктор
     def __init__(self, filename, font):
         pass
 
-    #Нарисовать карту
+    # Нарисовать карту
     def draw(self):
         pass
 
-    #Проверить клик
+    # Проверить клик
     def check_click(self, pos):
         pass
 
-    #Шаг симуляции
+    # Шаг симуляции
     def step(self):
         pass
 
-    #Начать симуляцию
+    # Начать симуляцию
     def start_simulation(self):
         pass
 
-    #Обработать событие
+    # Обработать событие
     def handle_event(self, event):
         pass
 
 
-#Личность
+# Личность
 class Person:
     HOME_LENGTH = None
     PLACE_LENGTH = None
     HEAL_LENGTH = None
 
-    #Enum цвет
+    # Enum цвет
     class Color:
         DEFAULT = (0, 255, 255)
         SICK = (255, 0, 0)
@@ -86,14 +80,14 @@ class Person:
         HOME_HEALTHY = (125, 125, 125)
         DEAD = (255, 255, 255)
 
-    #Enum статус
+    # Enum статус
     class Status:
         DEFAULT = 0
         SICK = 1
         HEALTHY = 2
         DEAD = 3
 
-    #Enum действие
+    # Enum действие
     class Action:
         SitHome = 0
         WalkingPlace = 1
@@ -102,90 +96,90 @@ class Person:
         Choose = 4
         DEAD = 5
 
-    #Конструктор
+    # Конструктор
     def __init__(self, x_home, y_home, status):
         pass
 
-    #Добавить места
+    # Добавить места
     def add_places(self, places, prob):
         pass
 
 
-#Много личностей
+# Много личностей
 class Persons:
-    #Конструктор
+    # Конструктор
     def __init__(self, persons, city):
         pass
 
-    #Сделать шаг
+    # Сделать шаг
     def step(self):
         pass
 
 
-#Клетка
+# Клетка
 class Cell:
     image = False
     R = None
     IMAGE_HOME = None
     IMAGE_OUTSIDE = None
 
-    #Инициализировать картинку для личности
+    # Инициализировать картинку для личности
     @staticmethod
     def init_image(filename, r):
         pass
 
-    #Нарисовать людей в клетке
+    # Нарисовать людей в клетке
     @staticmethod
     def draw(win, cell, x, y, w, h):
         pass
 
 
-#Клетчатая сетка
+# Клетчатая сетка
 class Grid:
-    #Конструктор
+    # Конструктор
     def __init__(self, n, W, H, x0, y0):
         pass
 
-    #Нарисовать сетку
+    # Нарисовать сетку
     def draw(self, win):
         pass
 
-    #Добавить личность на сетку
+    # Добавить личность на сетку
     def add(self, person):
         pass
 
 
-#Город
+# Город
 class City:
-    #Конструктор
+    # Конструктор
     def __init__(self, center, r, name, grid_n, person_n, W, H, x0, p_begin, place_count, font, map):
         pass
 
-    #Нарисовать город (в виде круга)
+    # Нарисовать город (в виде круга)
     def draw(self, win):
         pass
 
-    #Нарисовать сегмент круга
+    # Нарисовать сегмент круга
     def draw_arc(self, win, color, start, end):
         pass
 
-    #Нарисовать людей в городе
+    # Нарисовать людей в городе
     def draw_people(self, win):
         pass
 
-    #Нарисовать информацию о городе
+    # Нарисовать информацию о городе
     def draw_info(self, win):
         pass
 
-    #Проверить был ли клик на город
+    # Проверить был ли клик на город
     def check_click(self, pos):
         pass
 
-    #Шаг симуляции
+    # Шаг симуляции
     def step(self):
         pass
 
-    #Провести вакцинацию
+    # Провести вакцинацию
     def vaccinate(self):
         pass
 
